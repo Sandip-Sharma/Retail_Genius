@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Shopping Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-top: 0;
+        }
+        .recommendations {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .comparision{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            /* background-color: #333; */
+            justify-content: center;
+        }
+        .tab1{
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 10px;
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .comparision {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 10px;
+            width: calc(95.333% - 20px);
+            box-sizing: border-box;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .pro{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .product img {
+            height: 200px;
+            max-width: 100%;
+            border-radius: 5px;
+            
+        }
+        .product h2 {
+            font-size: 1.2em;
+            margin: 0 0 10px;
+        }
+        .product p {
+            margin: 0;
+            color: #666;
+        }
+        .tab1{
+            /* display: flex; */
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .tab1 img{
+            height: 200px;
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .btns{
+            margin-top: 10px;
+            border-radius: 5px;
+            border-color: transparent;
+            background-color: rgb(255, 247, 0);
+            font-size: 15px;
+            font-style: bold;
+            font-weight: 500;
+            width: 100%;
+            height: 40px;
+        }
+        #bt{
+            background-color: rgb(250, 28, 28);
+        }
+        .hlo{
+            height: 200px;
+            max-width: 100%;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+        }
+        .can{
+            display: flex;
+            padding: 20px;
+            /* background-color: red; */
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Personalized Shopping Assistant</h1>
+    </header>
+    <div class="container">
+        <h2>Product Decision Recomendation</h2>
+        <div class="recommendations">
+            
+        </div>
+        <div class="comparision">
+            <div class="tab1">
+                Amazon.com
+                <div class="hlo">
+                <img src="notebook-g16-7630-nt-black-gallery-1.psd.avif">
+                </div>
+                <h2>Acer Aspire Lite 13th Gen Intel </h2>
+                <p>Powerful Productivity: Latest 13th Generation Intel Core i3-1305U Processor delivers unmatched speed and intelligence, enabling impressive creating.</p>
+                <button class="btns"><a href="https://www.amazon.in/Acer-i3-1305U-Premium-Windows-AL15-53/dp/B0DB1SDB87/ref=sr_1_1_sspa?crid=21AYI7A063ZFH&dib=eyJ2IjoiMSJ9.xm_d8XnYx5x3mr7gMcEOd38UGXhgP8IJUhfThCWk-DsUVKlcEIMMkz6pS02k9yPXOKbH1ZSxC0iuvNcXUenISPut8TPhW9-py8z1ZdAcxRLRU0MSqlLl9WLiis1hDe5yHBJ_GSgRC-YI3C2UASy3J6089zM_Xsa3vlUHslAv8iOnLFrwQU0HmmEbKvq-WjuG6ZIhZZA_jbvq2FUrX_559TkipzzI9oNtGu7aHibjECA.Woz-yb8ubZMC2cDMBhajpIizTGOqRZKuSt-AfaYI77E&dib_tag=se&keywords=Acer+Aspire+Lite+13th+Gen+Intel&qid=1724880982&sprefix=%2Caps%2C241&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">₹24,000/-</a></button>
+            </div>
+            <div class="tab1">
+                Flipkart.com
+                <div class="hlo">
+                <img src="notebook-g16-7630-nt-black-gallery-1.psd.avif">
+                </div>
+                <h2>Acer Aspire Lite 13th Gen Intel </h2>
+                <p>Powerful Productivity: Latest 13th Generation Intel Core i3-1305U Processor delivers unmatched speed and intelligence, enabling impressive creating.</p>
+                <button class="btns" id="bt"><a href="https://www.amazon.in/Acer-i3-1305U-Premium-Windows-AL15-53/dp/B0DB1SDB87/ref=sr_1_1_sspa?crid=21AYI7A063ZFH&dib=eyJ2IjoiMSJ9.xm_d8XnYx5x3mr7gMcEOd38UGXhgP8IJUhfThCWk-DsUVKlcEIMMkz6pS02k9yPXOKbH1ZSxC0iuvNcXUenISPut8TPhW9-py8z1ZdAcxRLRU0MSqlLl9WLiis1hDe5yHBJ_GSgRC-YI3C2UASy3J6089zM_Xsa3vlUHslAv8iOnLFrwQU0HmmEbKvq-WjuG6ZIhZZA_jbvq2FUrX_559TkipzzI9oNtGu7aHibjECA.Woz-yb8ubZMC2cDMBhajpIizTGOqRZKuSt-AfaYI77E&dib_tag=se&keywords=Acer+Aspire+Lite+13th+Gen+Intel&qid=1724880982&sprefix=%2Caps%2C241&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">26,000/-</a></button>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <center><h1>Price Graph</h1></center>
+    <canvas id="myBarChart" width="50" height="20"></canvas>
+   
+
+  <script>
+    var ctx = document.getElementById('myBarChart').getContext('2d');
+    var myBarChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        datasets: [{
+          label: 'Monthly Sales',
+          data: [80000,75000, 78000, 66000, 70000, 60000],
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
+
+
+
+
+
+<br><br><br>
+<center><h1>Chat With Our Chat BOT</h1></center>
+<div class="can">
+    
+    <div class="chat-container">
+        <div id="chatbox" class="chatbox"></div>
+        <input type="text" id="userInput" placeholder="Type your message..." />
+        <br><br>
+        <button id="sendBtn">Send</button>
+<br><br><br>
+        Few Propmts:<br>
+        -> hi<br>
+        -> can you help me with something?<br>
+        -> what do you recommend?<br>
+        -> should I place an order now or get more details first?<br>
+    </div></div>
+    
+    <script src="script.js"></script>
+
+
+    <script>
+        // JavaScript code to fetch user preferences and browsing history would go here.
+        // This is where you would integrate with your AI service or API.
+        // For example, you might use fetch() to get data from your server and update the DOM.
+
+        // Example placeholder for functionality:
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Personalized Shopping Assistant is ready.');
+            // Fetch recommendations from an API or server
+            // Display recommendations in the recommendations section
+        });
+    </script>
+</body>
+</html>
